@@ -1,0 +1,9 @@
+@mixin flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin shadow{
+    box-shadow: 5px 5px rgb(39, 39, 39);
+}

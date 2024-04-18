@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/style.css" />
+    <title>Todo App</title>
+  </head>
+  <body>
+    <div id="title-container"><h1>Todo App</h1></div>
+    <!-- create the big container for all app -->
+    <div id="first-container">
+      <!-- left container -->
+      <div id="left-container">
+        <h1 class="left-container-title">Completed Task</h1>
+        <div class="completed-task-container-left">
+          <!-- done task container -->
+        </div>
+      </div>
+      <!-- right container -->
+      <div id="right-container">
+        <h1 class="right-container-title">Add New Task</h1>
+        <input placeholder="add a new todo" id="tasks-input" type="text" />
+        <div class="right-btn-container">
+          <button id="add-btn" class="right-cont-btn">Add new Task</button>
+          <button id="clear-btn" class="right-cont-btn">Clear all Task</button>
+          <button id="complete-task-btn" class="right-cont-btn">
+            All Task completed
+          </button>
+        </div>
+        <!-- tasks container -->
+        <div class="task-container"></div>
+      </div>
+
+      <!-- end of container  -->
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

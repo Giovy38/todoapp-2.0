@@ -1,0 +1,193 @@
+@import "./utilies.scss";
+@import "./colors.scss";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    @include flexCenter;
+    flex-direction: column;
+    padding-top: 10px;
+    background: $bg-color;
+}
+
+#title-container{
+    font-size: 25px;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-style: italic;
+    background: $title-bg-color;
+    border-radius: 0 15px 0 15px;
+    @include shadow;
+}
+
+// first container
+
+#first-container{
+    border: 2px solid $container-border;
+    border-radius: 20px;
+    width: 90vw;
+    min-height: 85vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px 10px 100px 10px;
+    gap: 10px;
+    @include shadow;
+
+    
+
+    // left container
+    #left-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid $container-border;
+        border-radius: 20px;
+
+        .left-container-title{
+            margin-bottom: 15px;
+        }
+
+        .completed-task-container-left{
+            border: 3px solid $container-border;
+            border-radius: 20px;
+            width: 90%;
+            min-height: 90%;
+            display: flex;
+            padding: 10px;
+            margin: 10px;
+            flex-direction: column;
+            align-items: center;
+
+            .single-task-container-left{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                border-bottom: 3px solid black;
+                width: 95%;
+                height: 30px;
+                align-items: center;
+                margin-top: 5px;
+                font-style: italic;
+                font-weight: bold;
+                padding: 3px;
+                margin-top: 5px;
+            }
+
+        }
+    }
+
+    // right container
+    #right-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid $container-border;
+        border-radius: 20px;
+        padding: 10px;
+
+        #tasks-input{
+            width: 90%;
+            border-radius: 20px;
+            height: 30px;
+            margin: 25px 0 25px 0;
+            text-align: center;
+            font-style: italic;
+            @include shadow;
+        }
+
+        .right-btn-container{
+            @include flexCenter;
+            gap: 20px;
+            .right-cont-btn{
+                border-radius: 100px;
+                padding: 5px;
+                height:50px;
+                width: 150px;
+                cursor: pointer;
+                font-size: 15px;
+                font-weight: bold;
+
+                &:hover{
+                    transition: all 0.5s ease;
+                    transform: translate(0, 5px);
+                    background: $title-bg-color;
+                }
+            }
+
+
+            // single btn 
+            #add-btn{
+                background-color: $add-btn;
+            }
+
+            #clear-btn{
+                background-color: $clear-btn;
+                color: $text-white;
+
+                &:hover{
+                    color: $text-black;
+                }
+            }
+
+            #complete-task-btn{
+                background-color: $task-completed-btn;
+            }
+
+        }
+
+        // tasks container
+        .task-container{
+            border: 5px solid black;
+            width: 90%;
+            min-height: 70%;
+            margin-top: 10px;
+            border-radius: 10px;
+            padding: 5px;
+
+            .single-task-container{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 2px solid black;
+                gap: 10px;
+                .task{
+                    text-align: center;
+                    font-style: italic;
+                    font-weight: bold;
+                    margin: 3px;
+                    font-size: 15px;
+                    width: 90%;
+                }
+
+                .remove-task-btn{
+                    padding: 3px;
+                    cursor: pointer;
+                    font-weight: bold; 
+                    background: rgb(189, 4, 4);
+                    border-radius: 15px 0 15px 0;
+                    padding: 5px;
+                    margin-bottom: 3px;
+                    box-shadow: 3px 2px black;
+                }
+                .done-task-btn{
+                    padding: 3px;
+                    cursor: pointer;
+                    font-weight: bold;
+                    background: green;
+                    border-radius: 15px 0 15px 0;
+                    padding: 5px;
+                    margin-bottom: 3px;
+                    box-shadow: 3px 2px black;
+                }
+
+            }
+          
+        }
+        
+        
+    }
+}

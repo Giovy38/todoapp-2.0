@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 10px;
+  background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #00608a);
+}
+
+#title-container {
+  font-size: 25px;
+  margin-bottom: 10px;
+  padding: 5px;
+  font-style: italic;
+  background: linear-gradient(to right, #e66465, #9198e5);
+  border-radius: 0 15px 0 15px;
+  box-shadow: 5px 5px rgb(39, 39, 39);
+}
+
+#first-container {
+  border: 2px solid black;
+  border-radius: 20px;
+  width: 90vw;
+  min-height: 85vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 10px 10px 100px 10px;
+  gap: 10px;
+  box-shadow: 5px 5px rgb(39, 39, 39);
+}
+#first-container #left-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+#first-container #left-container .left-container-title {
+  margin-bottom: 15px;
+}
+#first-container #left-container .completed-task-container-left {
+  border: 3px solid black;
+  border-radius: 20px;
+  width: 90%;
+  min-height: 90%;
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  flex-direction: column;
+  align-items: center;
+}
+#first-container #left-container .completed-task-container-left .single-task-container-left {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-bottom: 3px solid black;
+  width: 95%;
+  height: 30px;
+  align-items: center;
+  margin-top: 5px;
+  font-style: italic;
+  font-weight: bold;
+  padding: 3px;
+  margin-top: 5px;
+}
+#first-container #right-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 10px;
+}
+#first-container #right-container #tasks-input {
+  width: 90%;
+  border-radius: 20px;
+  height: 30px;
+  margin: 25px 0 25px 0;
+  text-align: center;
+  font-style: italic;
+  box-shadow: 5px 5px rgb(39, 39, 39);
+}
+#first-container #right-container .right-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+#first-container #right-container .right-btn-container .right-cont-btn {
+  border-radius: 100px;
+  padding: 5px;
+  height: 50px;
+  width: 150px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+}
+#first-container #right-container .right-btn-container .right-cont-btn:hover {
+  transition: all 0.5s ease;
+  transform: translate(0, 5px);
+  background: linear-gradient(to right, #e66465, #9198e5);
+}
+#first-container #right-container .right-btn-container #add-btn {
+  background-color: rgb(53, 207, 53);
+}
+#first-container #right-container .right-btn-container #clear-btn {
+  background-color: rgb(138, 0, 0);
+  color: white;
+}
+#first-container #right-container .right-btn-container #clear-btn:hover {
+  color: black;
+}
+#first-container #right-container .right-btn-container #complete-task-btn {
+  background-color: rgb(226, 154, 30);
+}
+#first-container #right-container .task-container {
+  border: 5px solid black;
+  width: 90%;
+  min-height: 70%;
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 5px;
+}
+#first-container #right-container .task-container .single-task-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
+  gap: 10px;
+}
+#first-container #right-container .task-container .single-task-container .task {
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+  margin: 3px;
+  font-size: 15px;
+  width: 90%;
+}
+#first-container #right-container .task-container .single-task-container .remove-task-btn {
+  padding: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  background: rgb(189, 4, 4);
+  border-radius: 15px 0 15px 0;
+  padding: 5px;
+  margin-bottom: 3px;
+  box-shadow: 3px 2px black;
+}
+#first-container #right-container .task-container .single-task-container .done-task-btn {
+  padding: 3px;
+  cursor: pointer;
+  font-weight: bold;
+  background: green;
+  border-radius: 15px 0 15px 0;
+  padding: 5px;
+  margin-bottom: 3px;
+  box-shadow: 3px 2px black;
+}/*# sourceMappingURL=style.css.map */
