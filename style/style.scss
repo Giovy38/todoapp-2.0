@@ -1,5 +1,6 @@
 @import "./utilies.scss";
 @import "./colors.scss";
+@import "./media-queries";
 
 *{
     margin: 0;
@@ -35,7 +36,13 @@ body{
     grid-template-columns: 1fr 1fr;
     padding: 10px 10px 100px 10px;
     gap: 10px;
+    margin-bottom: 50px;
     @include shadow;
+
+    @include intermediate{
+        display: flex;
+        flex-direction: column-reverse;
+    }
 
     
 
@@ -46,6 +53,8 @@ body{
         align-items: center;
         border: 2px solid $container-border;
         border-radius: 20px;
+        min-height: 40vh;
+    
 
         .left-container-title{
             margin-bottom: 15px;
@@ -61,6 +70,7 @@ body{
             margin: 10px;
             flex-direction: column;
             align-items: center;
+            min-height: 30vh;
 
             .single-task-container-left{
                 display: flex;
@@ -88,6 +98,8 @@ body{
         border: 2px solid $container-border;
         border-radius: 20px;
         padding: 10px;
+        min-height: 40vh;
+
 
         #tasks-input{
             width: 90%;
@@ -102,6 +114,10 @@ body{
         .right-btn-container{
             @include flexCenter;
             gap: 20px;
+
+            @include tablet{
+                flex-direction: column;
+            }
             .right-cont-btn{
                 border-radius: 100px;
                 padding: 5px;
@@ -147,6 +163,8 @@ body{
             margin-top: 10px;
             border-radius: 10px;
             padding: 5px;
+            min-height: 20vh;
+
 
             .single-task-container{
                 display: flex;
