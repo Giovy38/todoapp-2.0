@@ -81,7 +81,6 @@ function onClickAdd() {
 
         completedTasksContainer.appendChild(thisTask);
 
-        thisTask.removeChild(thisTask.children[2]);
         thisTask.removeChild(thisTask.children[1]);
       }
     }
@@ -134,7 +133,6 @@ function completeAllTasks() {
     task.className = "single-task-container-left ";
     completedTasksContainer.appendChild(task);
 
-    task.removeChild(task.children[2]);
     task.removeChild(task.children[1]);
   });
 }
