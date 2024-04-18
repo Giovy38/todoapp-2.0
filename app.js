@@ -3,7 +3,7 @@
 const taskInput = document.getElementById("tasks-input");
 taskInput.addEventListener("focus", onFocus);
 taskInput.addEventListener("blur", onFocus);
-taskInput.addEventListener("keypress", onClickAdd);
+taskInput.addEventListener("keypress", onClickenter);
 
 function onFocus(e) {
   if (e.type == "focus") {
@@ -21,76 +21,80 @@ const btnAdd = document.getElementById("add-btn");
 
 btnAdd.addEventListener("click", onClickAdd);
 
-function onClickAdd(e) {
+function onClickenter(e) {
   if (e.key == "Enter") {
-    if (taskInput.value == "") {
-      alert("devi prima scrivere qualcosa per inserire una nuova task");
-    } else {
-      // take the input value
-      const todo = taskInput.value;
-      // create new div and set class
-      const newDiv = document.createElement("div");
-      newDiv.className = "single-task-container";
-      // create the p that must be into the div
+    onClickAdd();
+  }
+}
 
-      // task
-      const task = document.createElement("p");
-      task.className = "task";
-      task.innerHTML = todo;
-      // done btn
-      const doneBtn = document.createElement("p");
-      doneBtn.className = "done-task-btn";
-      doneBtn.innerHTML = "V";
-      // remove btn
-      const removeBtn = document.createElement("p");
-      removeBtn.className = "remove-task-btn";
-      removeBtn.innerHTML = "X";
-      // insert the 3 p into the newDiv
+function onClickAdd() {
+  if (taskInput.value == "") {
+    alert("devi prima scrivere qualcosa per inserire una nuova task");
+  } else {
+    // take the input value
+    const todo = taskInput.value;
+    // create new div and set class
+    const newDiv = document.createElement("div");
+    newDiv.className = "single-task-container";
+    // create the p that must be into the div
 
-      newDiv.appendChild(task);
-      newDiv.appendChild(doneBtn);
-      newDiv.appendChild(removeBtn);
+    // task
+    const task = document.createElement("p");
+    task.className = "task";
+    task.textContent = todo;
+    // done btn
+    const doneBtn = document.createElement("p");
+    doneBtn.className = "done-task-btn";
+    doneBtn.textContent = "V";
+    // remove btn
+    const removeBtn = document.createElement("p");
+    removeBtn.className = "remove-task-btn";
+    removeBtn.textContent = "X";
+    // insert the 3 p into the newDiv
 
-      // now append the newDiv into HTML - task container
+    newDiv.appendChild(task);
+    newDiv.appendChild(doneBtn);
+    newDiv.appendChild(removeBtn);
 
-      const taskContainer = document.querySelector(".task-container");
+    // now append the newDiv into HTML - task container
 
-      taskContainer.appendChild(newDiv);
+    const taskContainer = document.querySelector(".task-container");
 
-      // set the input to the default value
+    taskContainer.appendChild(newDiv);
 
-      taskInput.value = "";
+    // set the input to the default value
 
-      // add event to single btn
+    taskInput.value = "";
 
-      // complete single task
-      let vBtn = document.querySelectorAll(".done-task-btn");
+    // add event to single btn
 
-      for (let i = 0; i < vBtn.length; i++) {
-        vBtn[i].addEventListener("click", completeSingleTask);
+    // complete single task
+    let vBtn = document.querySelectorAll(".done-task-btn");
 
-        function completeSingleTask(e) {
-          const thisTask = e.target.parentElement;
+    for (let i = 0; i < vBtn.length; i++) {
+      vBtn[i].addEventListener("click", completeSingleTask);
 
-          thisTask.className = "single-task-container-left ";
+      function completeSingleTask(e) {
+        const thisTask = e.target.parentElement;
 
-          completedTasksContainer.appendChild(thisTask);
+        thisTask.className = "single-task-container-left ";
 
-          thisTask.removeChild(thisTask.children[2]);
-          thisTask.removeChild(thisTask.children[1]);
-        }
+        completedTasksContainer.appendChild(thisTask);
+
+        thisTask.removeChild(thisTask.children[2]);
+        thisTask.removeChild(thisTask.children[1]);
       }
+    }
 
-      // remove single task
+    // remove single task
 
-      let xBtn = document.querySelectorAll(".remove-task-btn");
+    let xBtn = document.querySelectorAll(".remove-task-btn");
 
-      for (let i = 0; i < xBtn.length; i++) {
-        xBtn[i].addEventListener("click", removeSingleTask);
+    for (let i = 0; i < xBtn.length; i++) {
+      xBtn[i].addEventListener("click", removeSingleTask);
 
-        function removeSingleTask(e) {
-          e.target.parentElement.remove();
-        }
+      function removeSingleTask(e) {
+        e.target.parentElement.remove();
       }
     }
   }
